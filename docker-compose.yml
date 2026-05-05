@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: devops-ci-cd-service:latest
+    container_name: devops-ci-cd-service
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
